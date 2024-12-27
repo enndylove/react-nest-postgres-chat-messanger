@@ -17,7 +17,8 @@ const users: Record<string, string> = {};
 
 @WebSocketGateway({
   cors: {
-    origin: CLIENT_URI
+    origin: CLIENT_URI,
+    credentials: true
   },
   serveClient: false,
   namespace: "chat"
