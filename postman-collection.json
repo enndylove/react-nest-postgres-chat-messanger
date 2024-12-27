@@ -1,0 +1,142 @@
+{
+  "info": {
+    "name": "React Nest PostgreSQL Chat",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "WebSocket Events",
+      "item": [
+        {
+          "name": "Get Messages",
+          "request": {
+            "method": "WEBSOCKET",
+            "header": [],
+            "url": {
+              "raw": "ws://localhost:3000",
+              "protocol": "ws",
+              "host": ["localhost"],
+              "port": "3000"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"event\": \"messages:get\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Clear Messages",
+          "request": {
+            "method": "WEBSOCKET",
+            "header": [],
+            "url": {
+              "raw": "ws://localhost:3000",
+              "protocol": "ws",
+              "host": ["localhost"],
+              "port": "3000"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"event\": \"messages:clear\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Post Message",
+          "request": {
+            "method": "WEBSOCKET",
+            "header": [],
+            "url": {
+              "raw": "ws://localhost:3000",
+              "protocol": "ws",
+              "host": ["localhost"],
+              "port": "3000"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"event\": \"message:post\", \"data\": {\"content\": \"Hello, World!\", \"userId\": \"1\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update Message",
+          "request": {
+            "method": "WEBSOCKET",
+            "header": [],
+            "url": {
+              "raw": "ws://localhost:3000",
+              "protocol": "ws",
+              "host": ["localhost"],
+              "port": "3000"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"event\": \"message:put\", \"data\": {\"id\": \"1\", \"content\": \"Updated message\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Message",
+          "request": {
+            "method": "WEBSOCKET",
+            "header": [],
+            "url": {
+              "raw": "ws://localhost:3000",
+              "protocol": "ws",
+              "host": ["localhost"],
+              "port": "3000"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"event\": \"message:delete\", \"data\": {\"id\": \"1\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HTTP Endpoints",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["health"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
